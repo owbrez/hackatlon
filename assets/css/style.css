@@ -1,0 +1,193 @@
+/* RESET CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Visibilité */
+.hidden{
+    display:none;
+}
+
+/* Général */
+
+.alert{
+    width:100%;
+    height:30px;
+    position:absolute;
+    top:-150px;left:0;
+    background-color:green;
+    color:#fff;
+    padding:0.5em;
+    box-sizing: border-box;
+    font-size:1em;
+    font-weight:normal;
+    transition:1s;
+}
+
+header{
+  text-align:left;
+  background-color:#000;
+  color:#fff;
+  box-sizing: border-box;
+  height:30px;
+  padding:10px;
+}
+
+body{
+    width:320px;
+    height:480px;
+    position:relative;
+    border:solid 1px #000;
+    display:block;
+    margin: auto;
+    font-family: fantasy;
+    overflow:hidden;
+}
+
+/* INTERFACES */
+
+/*** Section Page */
+section.page{
+  height:calc(100% - 80px);
+  width:100%;
+  position:absolute;
+  top:30px;
+  left:-999px;
+  transition: 0.5s cubic-bezier(.73,.47,.58,.92);
+  padding:0px 5px;
+  box-sizing:border-box;
+}
+section.page.active{
+  left:0;
+}
+
+/*** FOOTER */
+footer {
+  display: block;
+  width: 100%;
+  height:50px;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  text-align: center;
+  font-family: fantasy;
+}
+#buttons_flex{
+  display: flex;
+  align-content: center;
+  flex-flow: row;
+  justify-content: space-around;
+}
+#buttons_flex li:first-child{
+  border-left:none;
+}
+#buttons_flex li:last-child{
+  border-right:none;
+}
+#buttons_flex li{
+  list-style-type: none;
+  text-align:center;
+  width:20%;
+  border-left:solid 1px #fff;
+  border-right:solid 1px #fff;
+  box-sizing: border-box;
+  height:50px;
+  padding:17px;
+  background-color:#000;
+  color:#fff;
+}
+#buttons_flex li:hover{
+  background-color:#fff;
+  color:#000;
+}
+#buttons_flex li a{
+  color:#fff;
+  text-decoration: none;
+}
+#buttons_flex li:hover a{
+  color:#000;
+}
+
+/* Page ChoixUtilisateur */
+.choixUtilisateur button{
+  height:50%;
+  width:100%;
+  cursor:pointer;
+}
+
+/* Page Connexion */
+.connexion form{
+    width:100%;
+    height:40%;
+    margin:auto;
+    margin-top:40%;
+    display:block;
+    vertical-align: top;
+}
+
+.connexion input{
+    display:inline-block;
+    width:calc(100% - 10px);
+    padding:0.5em;
+    box-sizing:border-box;
+    text-align:center;
+    position:relative;
+    vertical-align: top;
+}
+
+.connexion input:not([type = "submit"]){
+    margin-top:10px;
+}
+
+.connexion input[type="submit"]{
+    margin-top:2em;
+}
+
+.connexion input[type="text"]:before{
+    content:'<i class="fas fa-user"></i>';
+    display:block;
+    position:absolute;
+    width:30px;
+    height:100%;
+    top:0;
+    left:0;
+}
