@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -20,7 +20,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -46,15 +46,90 @@ table {
 
 /* Général */
 
+header{
+  text-align:left;
+  background-color:#000;
+  color:#fff;
+  box-sizing: border-box;
+  height:30px;
+  padding:10px;
+}
+
 body{
-    width:640px;
-    height:960px;
+    width:320px;
+    height:480px;
+    position:relative;
     border:solid 1px #000;
     display:block;
     margin: auto;
+    font-family: fantasy;
 }
 
 /* INTERFACES */
 
-/*** Menu */
+/*** Section Page */
+section.page{
+  height:calc(100% - 80px);
+  width:100%;
+  position:absolute;
+  top:30px;
+  left:-9999px;
+  transition: 0.5s cubic-bezier(.73,.47,.58,.92);
+}
+section.page.active{
+  left:0;
+}
 
+/*** FOOTER */
+footer {
+  display: block;
+  width: 100%;
+  height:50px;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  text-align: center;
+  font-family: fantasy;
+}
+#buttons_flex{
+  display: flex;
+  align-content: center;
+  flex-flow: row;
+  justify-content: space-around;
+}
+#buttons_flex li:first-child{
+  border-left:none;
+}
+#buttons_flex li:last-child{
+  border-right:none;
+}
+#buttons_flex li{
+  list-style-type: none;
+  text-align:center;
+  width:20%;
+  border-left:solid 1px #fff;
+  border-right:solid 1px #fff;
+  box-sizing: border-box;
+  height:50px;
+  padding:17px;
+  background-color:#000;
+  color:#fff;
+}
+#buttons_flex li:hover{
+  background-color:#fff;
+  color:#000;
+}
+#buttons_flex li a{
+  color:#fff;
+  text-decoration: none;
+}
+#buttons_flex li:hover a{
+  color:#000;
+}
+
+/* Page ChoixUtilisateur */
+.choixUtilisateur button{
+  height:50%;
+  width:100%;
+  cursor:pointer;
+}
