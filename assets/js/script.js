@@ -1,13 +1,16 @@
 var utilisateur = "";
 $(document).ready(function(){
     $('#seConnecter').submit(connexion);
+    $("#camera").click(function(){
+        const video = document.querySelector('#affichageQRcode');
+        navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => { video.srcObject = stream });
+    });
 });
 
 /** @description Connecte l'utilisateur
  * @param {e} évènement au clic  
  * @return {boolean}  true si connecté, false si mauvais identifiants
  */  
-
 function connexion(e){
     e.preventDefault();
     class Utilisateur{

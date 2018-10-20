@@ -16,10 +16,6 @@
   <h1>MNR App</H1>
 </header>
 
-<section class="page choixUtilisateur">
-<button type="button" onclick="goToPage('.connexion')">Je me connecte</button>
-<button type="button" onclick="goToPage('.googleMap')">Je suis visiteur</button>
-</section>
 <section class="page active connexion">
 <form action="" id="seConnecter">
     <i class="fas fa-user"></i>
@@ -28,12 +24,17 @@
   <input type="submit" value="Se Connecter">
 </form>
 </section>
-<section class="googleMap"></section>
+<section class="page choixUtilisateur">
+<button type="button" onclick="goToPage('.connexion')">Je me connecte</button>
+<button type="button" onclick="goToPage('.googleMap')">Je suis visiteur</button>
+</section>
+<section class="page googleMap"></section>
+<section class="page qrCode"></section>
 <footer>
 <nav id="buttons_flex">
-<li><div href="googleMap"><i class="fas fa-map-marker-alt"></i></div>
-<li><a href="mnr">MNR</a></li>
-  <li><a href="qrCode"><i class="fas fa-qrcode"></i></a></li>
+<li><div onclick="goToPage('.googleMap')"><i class="fas fa-map-marker-alt"></i></div>
+<li><div href="mnr">MNR</a></li>
+  <li><div onclick="goToPage('.qrCode')"><i class="fas fa-qrcode"></i></div></li>
   <li><a href="search"><i class="fas fa-search"></i></a></li>
   <li><a href="user"><i class="fas fa-user"></i></a></li>
   </li>
