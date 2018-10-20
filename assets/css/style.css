@@ -94,6 +94,7 @@ section.page{
   left:-999px;
   transition: 0.5s cubic-bezier(.73,.47,.58,.92);
   padding:0px 5px;
+  box-sizing:border-box;
 }
 section.page.active{
   left:0;
@@ -160,14 +161,17 @@ footer {
     margin:auto;
     margin-top:40%;
     display:block;
+    vertical-align: top;
 }
 
 .connexion input{
+    display:inline-block;
     width:calc(100% - 10px);
     padding:0.5em;
     box-sizing:border-box;
     text-align:center;
     position:relative;
+    vertical-align: top;
 }
 
 .connexion input:not([type = "submit"]){
@@ -176,5 +180,15 @@ footer {
 
 .connexion input[type="submit"]{
     margin-top:2em;
+}
+
+.connexion input[type="text"]:before{
+    content:'<i class="fas fa-user"></i>';
+    display:block;
+    position:absolute;
+    width:30px;
+    height:100%;
+    top:0;
+    left:0;
 }
 
