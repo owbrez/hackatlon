@@ -44,7 +44,7 @@ table {
 }
 /* Visibilité */
 .hidden{
-    display:none;  
+    display:none;
 }
 
 /* Général */
@@ -178,3 +178,10 @@ footer {
     margin-top:2em;
 }
 
+/*page inscription*/
+.inscriptionUtilisateur .input{
+  margin: 15px;
+  text-align: center;
+  width: (100% - 10px);
+
+}
