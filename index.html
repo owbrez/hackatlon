@@ -1,31 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
-<title>Read File (via AJAX)</title>
-<script type="text/javascript">
-var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
-
-function loadFile() {
-    reader.open('get', 'donnees/alienor/MNR 81.txt', true); 
-    reader.onreadystatechange = displayContents;
-    reader.send(null);
-}
-
-function displayContents() {
-    if(reader.readyState==4) {
-        var el = document.getElementById('main');
-        console.log(JSON.stringify(reader.responseText));
-        //el.innerHTML = reader.responseText;
-    }
-}
-
-</script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>interface1</title>
 </head>
 <body>
-<div id="container">
-    <input type="button" value="test.txt"  onclick="loadFile()" />
-    <div id="main">
-    </div>
-</div>
+  <nav>
+    <ul>
+      <li><a href="qrcode"><i class="fas fa-qrcode"></i></a></li>
+      <li><a href=""><i class="fas fa-"></i></a></li>
+      <li><a href=""><i class="fas fa-"></i></a></li>
+      <li><a href=""><i class="fas fa-"></i></a></li>
+      <li><a href=""><i class="fas fa-"></i></a></li>
+    </ul>
+  </nav>
 </body>
 </html>
