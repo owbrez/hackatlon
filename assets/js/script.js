@@ -1,5 +1,15 @@
 var utilisateur = "";
 $(document).ready(function(){
+    $('#seConnecter').submit(connexion);
+});
+
+/** @description Connecte l'utilisateur
+ * @param {e} évènement au clic  
+ * @return {boolean}  true si connecté, false si mauvais identifiants
+ */  
+
+function connexion(e){
+    e.preventDefault();
     class Utilisateur{
         constructor(id,nom,prenom,pseudo,adresse,email,password){
             this.id = id,
@@ -11,7 +21,9 @@ $(document).ready(function(){
             this.password = password
         }
         connect(pseudo,password){
-            if((this.pseudo == pseudo)&&(this.password = password)){
+            //console.log(pseudo);
+            ////console.log(password);
+            if((this.pseudo == pseudo)&&(this.password == password)){
                 return true;
             }else{
                 return false;
@@ -27,29 +39,21 @@ $(document).ready(function(){
             return this.nom;
         }
     }
-    $('#connection').click(connexion);
     var guillaume = new Utilisateur(1,'CAPELLE','Guillaume','gmb','niort','gmb.capelle@gmail.com','mdp');
-});
-
-/** @description Connecte l'utilisateur
- * @param {e} évènement au clic  
- * @return {boolean}  true si connecté, false si mauvais identifiants
- */  
-
-function connexion(e){
-    e.preventDefault();
-    let pseudo = $('form#connexion input#pseudo').val();
-    let mdp = $('form#connexion input#mdp').val();
+    let pseudo = $('.connexion input#pseudo').val();
+    let mdp = $('.connexion input#password').val();
     if(guillaume.connect(pseudo,mdp)){
         let prenom = guillaume.getPrenom();
         let nom = guillaume.getNom();
         $('#identite').append('Bienvenu '+guillaume.getPrenom()+' '+guillaume.getNom());
         utilisateur = guillaume;
-        console.log(utilisateur);
+        //console.log(utilisateur);
         goToPage('home');
+        showAlert('Vous êtes bien connecté.','green');
     }else{
-        showAlert('Vos identifiants ne correspondent à aucun compte.')
+        showAlert('Une erreur est survenue dans vos identifiants.','red');
     }
+    
 }
 
 /** @description Déconnecte l'utilisateur actuel
@@ -69,15 +73,18 @@ function deconnexion(e){
  */  
 function goToPage(page){
     $('.page').each(function(){
+        $(this).css('transform','scale(O.8)');
+        $(this).addClass('hidden');
         $(this).removeClass('active');
     }),
-    $(page).addClass('active');
+        $(page).removeClass('hidden');
+        $(page).addClass('active');
 }
 
 function showAlert(message,couleur){
     $('.alert').text(message);
-    $('.alert').css('color',color);
-    $('.alert').css('top','-999px');
-    setTimeout(function(){ $('.alert').css('top','-999px'); }, 3000);
+    $('.alert').css('background-color',couleur);
+    $('.alert').css('top','0px');
+    setTimeout(function(){ $('.alert').css('top','-150px'); }, 2000);
 }
 

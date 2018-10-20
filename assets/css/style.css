@@ -42,9 +42,26 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+/* Visibilité */
+.hidden{
+    display:none;  
+}
 
 /* Général */
+
+.alert{
+    width:100%;
+    height:30px;
+    position:absolute;
+    top:-150px;left:0;
+    background-color:green;
+    color:#fff;
+    padding:0.5em;
+    box-sizing: border-box;
+    font-size:1em;
+    font-weight:normal;
+    transition:1s;
+}
 
 header{
   text-align:left;
@@ -63,6 +80,7 @@ body{
     display:block;
     margin: auto;
     font-family: fantasy;
+    overflow:hidden;
 }
 
 /* INTERFACES */
@@ -73,8 +91,9 @@ section.page{
   width:100%;
   position:absolute;
   top:30px;
-  left:-9999px;
+  left:-999px;
   transition: 0.5s cubic-bezier(.73,.47,.58,.92);
+  padding:0px 5px;
 }
 section.page.active{
   left:0;
@@ -133,3 +152,29 @@ footer {
   width:100%;
   cursor:pointer;
 }
+
+/* Page Connexion */
+.connexion form{
+    width:100%;
+    height:40%;
+    margin:auto;
+    margin-top:40%;
+    display:block;
+}
+
+.connexion input{
+    width:calc(100% - 10px);
+    padding:0.5em;
+    box-sizing:border-box;
+    text-align:center;
+    position:relative;
+}
+
+.connexion input:not([type = "submit"]){
+    margin-top:10px;
+}
+
+.connexion input[type="submit"]{
+    margin-top:2em;
+}
+
