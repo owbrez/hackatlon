@@ -64,14 +64,14 @@ function deconnexion(e){
 
 
 /** @description Affiche la page entrée en parametre 
- * @param {string} page la classe de la page  
+ * @param {string} page la classe de la page / ne pas oublier le . 
  * @return {nothing}  
  */  
 function goToPage(page){
     $('.page').each(function(){
         $(this).removeClass('active');
     }),
-    $('section .',page).addClass('active');
+    $(page).addClass('active');
 }
 
 function showAlert(message,couleur){
@@ -80,3 +80,4 @@ function showAlert(message,couleur){
     $('.alert').css('top','-999px');
     setTimeout(function(){ $('.alert').css('top','-999px'); }, 3000);
 }
+
