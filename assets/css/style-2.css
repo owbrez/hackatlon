@@ -257,18 +257,10 @@ footer {
 }
 
 /*resultat de recherche*/
-
-.resultatRecherche form{
-    width:100%;
-    height:40%;
-    margin:auto;
-    display:block;
-    vertical-align: top;
-}
-
-.resultatRecherche p{
+.resultatRecherche h1{
 	text-align: center;
 	margin-top:10px;
+	margin-bottom: 10px;
 	border-width: 1px;
 	background-color: yellow;
 	opacity: 20%;
@@ -290,7 +282,46 @@ footer {
 	border-width: 1px;
 }
 
-.resultatRecherche label{
-	display: flex;
-	flex-direction: column;
+.resultatRecherche .description{
+	float:inherit;
+	display: block;
+}
+
+
+
+/*Parcours*/
+.parcours p{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: none;
+	text-align: center;
+}
+
+.parcours button{
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 20px;
+
+}
+
+.parcours img{
+	height: 120px;
+	width: 90;
+	margin-left: 80px;
+}
+.parcours .oui{
+	display: inline-block;
+	margin-top: 30px;
+	margin-left: 90px;
+}
+
+.parcours .trouve{
+margin-top: 10px;
+margin-left: 85px;
+}
+
+.parcours .question{
+	margin-top: 30px;
+	font-style:italic;
+
 }
