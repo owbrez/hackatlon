@@ -399,4 +399,4 @@ function retournerTableau(){
         $('.uneOeuvre .descriptionsPrecises').addClass('hidden');
         $('.uneOeuvre .descriptionsGenerales').removeClass('hidden');
     }
-}
+} 
