@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="assets/css/style-2.css">
   <link rel="stylesheet" href="assets/fontawesome-free-5.4.1-web/css/all.css">
   <script src="assets/js/librairies/jquery-min.js" charset="utf-8"></script>
-  <title>page d'inscription</title>
+  <title>Recherche de MNR</title>
 </head>
 
 <body>
@@ -16,14 +16,17 @@
   <h1>MNR App</H1>
 </header>
 
-<section class="page active inscriptionUtilisateur">
-  <p>Inscription</p>
+<section class="page active rechercheMnr">
+  <p>Que recherchez-vous ? </p><br/>
 <form>
-<input id="Prenom" type="text" placeholder="Prenom" /><br/>
-<input id="Pseudo"type="text" placeholder="Pseudo" /><br/>
-<input id="mdp"type="text" placeholder="Mot de passe" /><br/>
-<input id="confirmation"type="text" placeholder="Confirmer le mot de passe"/><br/>
-<input id="ville"type="text" placeholder="Ville"/><br/>
+<label for="recherche">Vous recherchez :</label>
+<input type="text" placeholder="rechercher..">
+  <select >
+    <option value="Artiste">Artiste</option>
+    <option value="Contenu">Contenu</option>
+    <option value="Ville">Ville</option>
+  </select>
+
 <input id="valide" type="submit" value="Valider"><br/>
 </form>
 </section>
