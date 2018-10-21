@@ -1,10 +1,7 @@
 var utilisateur = "";
 $(document).ready(function(){
     $('#seConnecter').submit(connexion);
-    $("#camera").click(function(){
-        const video = document.querySelector('#affichageQRcode');
-        navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => { video.srcObject = stream });
-    });
+    $("#scan").on('click', startScan);
 });
 
 /** @description Connecte l'utilisateur
@@ -69,19 +66,17 @@ function deconnexion(e){
     goToPage('choixUtilisateur');
 }
 
-
 /** @description Affiche la page entrée en parametre 
  * @param {string} page la classe de la page / ne pas oublier le . 
  * @return {nothing}  
  */  
 function goToPage(page){
     $('.page').each(function(){
-        $(this).css('transform','scale(O.8)');
-        $(this).addClass('hidden');
         $(this).removeClass('active');
+        $(this).addClass('hidden');
     }),
-        $(page).removeClass('hidden');
         $(page).addClass('active');
+        $(page).removeClass('hidden');
 }
 
 function showAlert(message,couleur){
@@ -91,3 +86,37 @@ function showAlert(message,couleur){
     setTimeout(function(){ $('.alert').css('top','-150px'); }, 2000);
 }
 
+function startScan() {
+		$("code").html('scanning');
+		$('#qr').html5_qrcode(function(data){
+		         // do something when code is read
+		         $(".feedback").html('Oeuvre scannée ' +data);
+		    },
+		    function(error){
+		        //show read errors 
+		        $(".feedback").html('Impossible de scanner le code: ' +error)
+		    }, function(videoError){
+		        //the video stream could be opened
+		        $(".feedback").html('Erreur vidéo');
+		    }
+		);
+
+		$("#scan").addClass('disabled');
+		$("#stop").removeClass('disabled');
+		$("#change").removeClass('disabled');
+	
+	$("#stop").on('click', function() {
+		$("#qr").html5_qrcode_stop();
+		$("code").html('Start Scanning');
+
+		$("#scan").removeClass('disabled');
+		$("#stop").addClass('disabled');
+		$("#change").addClass('disabled');
+	});
+	$("#change").on('click', function() {
+		$("#qr").html5_qrcode_changeCamera();
+
+		$("#scan").addClass('disabled');
+		$("#stop").removeClass('disabled');
+	})
+};

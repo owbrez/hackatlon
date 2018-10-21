@@ -44,7 +44,8 @@ table {
 }
 /* Visibilité */
 .hidden{
-    display:none;
+    opacity:0;
+    transform:scale(0.1);
 }
 
 /* Général */
@@ -73,14 +74,14 @@ header{
 }
 
 body{
-    width:320px;
-    height:480px;
+    width:360px;
+    height:510px;
     position:relative;
     border:solid 1px #000;
     display:block;
     margin: auto;
     font-family: fantasy;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 /* INTERFACES */
@@ -98,6 +99,7 @@ section.page{
 }
 section.page.active{
   left:0;
+  transition: 0.5s cubic-bezier(.73,.47,.58,.92);
 }
 
 /*** FOOTER */
@@ -134,6 +136,7 @@ footer {
   padding:17px;
   background-color:#000;
   color:#fff;
+  cursor:pointer;
 }
 #buttons_flex li:hover{
   background-color:#fff;
@@ -187,3 +190,41 @@ footer {
 .connexion input[type="submit"]{
     margin-top:2em;
 }   
+
+/* Page QrCode */
+
+section.qrCode{
+    background-color:#f5F5F5;
+}
+
+section.qrCode button{
+    display:block;
+    width:100%;
+    padding:1em 0.5em;
+    margin-bottom:5px;
+    border:0;
+    border-radius:0;
+    color:#fff;
+    text-transform:uppercase;
+    cursor:pointer;
+}
+section.qrCode button:hover{
+    transform:scale(1.02);
+}
+
+section.qrCode #qr{
+    background-image:url('../../image/fond-qrCode.jpg');
+    background-position:center;
+}
+
+section.qrCode button#scan{
+    background-color:green;
+}
+
+section.qrCode button#stop{
+    background-color:red;
+}
+
+section.qrCode button#change{
+    background-color:orange;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,37 +12,60 @@
 </head>
 
 <body>
-<div class="alert"></div>
-<header>
-  <h1>MNR App</H1>
-</header>
+  <div class="alert"></div>
+  <header>
+    <h1>MNR App</H1>
+  </header>
 
-<section class="page active connexion">
-<form action="" id="seConnecter">
-    <i class="fas fa-user"></i>
-  <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo">
-  <input type="password" placeholder="Mot de Passe" name="password" id="password">
-  <input type="submit" value="Se Connecter">
-</form>
-</section>
-<section class="page choixUtilisateur">
-<button type="button" onclick="goToPage('.connexion')">Je me connecte</button>
-<button type="button" onclick="goToPage('.googleMap')">Je suis visiteur</button>
-</section>
-<section class="page googleMap"></section>
-<section class="page qrCode"></section>
-<footer>
-<nav id="buttons_flex">
-<li><div onclick="goToPage('.googleMap')"><i class="fas fa-map-marker-alt"></i></div>
-<li><div href="mnr">MNR</a></li>
-  <li><div onclick="goToPage('.qrCode')"><i class="fas fa-qrcode"></i></div></li>
-  <li><a href="search"><i class="fas fa-search"></i></a></li>
-  <li><a href="user"><i class="fas fa-user"></i></a></li>
-  </li>
-</ul>
-</nav>
-</footer>
-<script src="assets/js/script.js" charset="utf-8"></script>
-
+  <section class="page connexion">
+    <form action="" id="seConnecter">
+      <i class="fas fa-user"></i>
+      <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo">
+      <input type="password" placeholder="Mot de Passe" name="password" id="password">
+      <input type="submit" value="Se Connecter">
+    </form>
+  </section>
+  <section class="page choixUtilisateur">
+    <button type="button" onclick="goToPage('.connexion')">Je me connecte</button>
+    <button type="button" onclick="goToPage('.googleMap')">Je suis visiteur</button>
+  </section>
+  <section class="page googleMap"></section>
+  <section class="page mnr"></section>
+  <section class="page active qrCode">
+    <div class="container" style="text-align: center">
+      <div id="qr" style="display: inline-block; width: 310px; height: 250px; border: 1px solid silver"></div>
+      <div class="row">
+        <button id="scan" class="btn btn-success btn-sm">start scaning</button>
+        <button id="stop" class="btn btn-warning btn-sm disabled">stop scanning</button>
+        <button id="change" class="btn btn-warning btn-sm disabled">change camera</button>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="page catalogue"></section>
+  <section class="page compte">
+    <div class="profil">
+      <p><i class="fa"></i> Pseudo</p>
+      <p><i class="fa"></i> nom</p>
+      <p><i class="fa"></i> prenom</p>
+      <p><i class="fa"></i> mot de passe</p>
+      <p><i class="fa"></i> ville</p> 
+    </div>
+  </section>
+  <footer>
+    <nav id="buttons_flex">
+      <li onclick="goToPage('.googleMap')"><i class="fas fa-map-marker-alt"></i></li>
+      <li onclick="goToPage('.mnr')">MNR</li>
+      <li onclick="goToPage('.qrCode')"><i class="fas fa-qrcode"></i></li>
+      <li onclick="goToPage('.catalogue')"><i class="fas fa-search"></i></li>
+      <li onclick="goToPage('.compte')"><i class="fas fa-user"></i></li>
+      </li>
+      </ul>
+    </nav>
+  </footer>
+  <script src="assets/js/script.js" charset="utf-8"></script>
+  <script src="assets/js/librairies/jsqrcode-combined.js"></script>
+  <script src="assets/js/librairies/html5-qrcode.js"></script>
 </body>
+
 </html>
