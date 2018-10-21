@@ -14,10 +14,10 @@
 <body>
   <div class="alert"></div>
   <header>
-    <h1>MNR App</H1>
+    <h1>Mission Vaillant</H1>
   </header>
 
-  <section class="page connexion">
+  <section class="page  connexion">
     <form action="" id="seConnecter">
       <i class="fas fa-user"></i>
       <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo">
@@ -25,13 +25,17 @@
       <input type="submit" value="Se Connecter">
     </form>
   </section>
-  <section class="page choixUtilisateur">
+  <section class="page active choixUtilisateur">
+      <img src="image/rose.png" alt="">
     <button type="button" onclick="goToPage('.connexion')">Je me connecte</button>
     <button type="button" onclick="goToPage('.googleMap')">Je suis visiteur</button>
   </section>
-  <section class="page googleMap"></section>
+  <section class="page googleMap">
+      <div id="map"></div>
+    <button onclick="goToPage('.parcours')">Musée Bernard d'Agesci : <span class="mnr">7 MNRs</span></button>
+  </section>
   <section class="page mnr"></section>
-  <section class="page active qrCode">
+  <section class="page qrCode">
     <div class="container" style="text-align: center">
       <div id="qr" style="display: inline-block; width: 310px; height: 250px; border: 1px solid silver"></div>
       <div class="row">
@@ -52,6 +56,8 @@
       <p><i class="fa"></i> ville</p> 
     </div>
   </section>
+  <section class="page parcours"></section>
+  <section class="uneOeuvre"></section>
   <footer>
     <nav id="buttons_flex">
       <li onclick="goToPage('.googleMap')"><i class="fas fa-map-marker-alt"></i></li>
@@ -59,13 +65,14 @@
       <li onclick="goToPage('.qrCode')"><i class="fas fa-qrcode"></i></li>
       <li onclick="goToPage('.catalogue')"><i class="fas fa-search"></i></li>
       <li onclick="goToPage('.compte')"><i class="fas fa-user"></i></li>
-      </li>
       </ul>
     </nav>
   </footer>
   <script src="assets/js/script.js" charset="utf-8"></script>
   <script src="assets/js/librairies/jsqrcode-combined.js"></script>
   <script src="assets/js/librairies/html5-qrcode.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmZ2X1WQVWj-OgEntt_CO-WoDxl-go4ps&callback=initMap"
+  async defer></script>
 </body>
 
 </html>

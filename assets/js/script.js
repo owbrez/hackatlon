@@ -1,8 +1,99 @@
 var utilisateur = "";
+var map;
 $(document).ready(function(){
     $('#seConnecter').submit(connexion);
     $("#scan").on('click', startScan);
 });
+function initMap() {
+    var museeAgesci = {lat: 46.323, lng: -0.464};
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 46.323, lng: -0.464},
+    zoom: 15,
+    styles: [
+        {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+        {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+        {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+        {
+          featureType: 'administrative.locality',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#d59563'}]
+        },
+        {
+          featureType: 'poi',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#d59563'}]
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'geometry',
+          stylers: [{color: '#263c3f'}]
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#6b9a76'}]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry',
+          stylers: [{color: '#38414e'}]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry.stroke',
+          stylers: [{color: '#212a37'}]
+        },
+        {
+          featureType: 'road',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#9ca5b3'}]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry',
+          stylers: [{color: '#746855'}]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
+          stylers: [{color: '#1f2835'}]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#f3d19c'}]
+        },
+        {
+          featureType: 'transit',
+          elementType: 'geometry',
+          stylers: [{color: '#2f3948'}]
+        },
+        {
+          featureType: 'transit.station',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#d59563'}]
+        },
+        {
+          featureType: 'water',
+          elementType: 'geometry',
+          stylers: [{color: '#17263c'}]
+        },
+        {
+          featureType: 'water',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#515c6d'}]
+        },
+        {
+          featureType: 'water',
+          elementType: 'labels.text.stroke',
+          stylers: [{color: '#17263c'}]
+        }
+      ],
+      zoomControl: true,
+      disableDefaultUI: true
+  });
+  var marker = new google.maps.Marker({position: museeAgesci, map: map,label:"7"});
+}
 
 /** @description Connecte l'utilisateur
  * @param {e} évènement au clic  
@@ -48,8 +139,8 @@ function connexion(e){
         $('#identite').append('Bienvenu '+guillaume.getPrenom()+' '+guillaume.getNom());
         utilisateur = guillaume;
         //console.log(utilisateur);
-        goToPage('home');
-        showAlert('Vous êtes bien connecté.','green');
+        goToPage('.googleMap');
+        showAlert('Vous êtes bien connecté.','#70b7bd');
     }else{
         showAlert('Une erreur est survenue dans vos identifiants.','red');
     }
@@ -90,33 +181,27 @@ function startScan() {
 		$("code").html('scanning');
 		$('#qr').html5_qrcode(function(data){
 		         // do something when code is read
-		         $(".feedback").html('Oeuvre scannée ' +data);
+		         console.log('Oeuvre scannée ' +data);
+                 $("#qr").html5_qrcode_stop();
+                 $("#qr").css('background','none');
+                 $("#qr").append('<button onclick="goToPage('+data+')">Voir l\'oeuvre</button>');
 		    },
 		    function(error){
 		        //show read errors 
-		        $(".feedback").html('Impossible de scanner le code: ' +error)
+		        console.log('Impossible de scanner le code: ' +error)
 		    }, function(videoError){
 		        //the video stream could be opened
-		        $(".feedback").html('Erreur vidéo');
-		    }
-		);
-
-		$("#scan").addClass('disabled');
-		$("#stop").removeClass('disabled');
-		$("#change").removeClass('disabled');
+		        console.log('Erreur vidéo');
+            });
 	
 	$("#stop").on('click', function() {
 		$("#qr").html5_qrcode_stop();
-		$("code").html('Start Scanning');
-
-		$("#scan").removeClass('disabled');
-		$("#stop").addClass('disabled');
-		$("#change").addClass('disabled');
 	});
 	$("#change").on('click', function() {
 		$("#qr").html5_qrcode_changeCamera();
-
-		$("#scan").addClass('disabled');
-		$("#stop").removeClass('disabled');
 	})
 };
+
+function loadOeuvre(id){
+    console.log(id);
+}
