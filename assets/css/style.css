@@ -45,7 +45,7 @@ table {
 /* Visibilité */
 .hidden{
     opacity:0;
-    display:none;
+    display:none !important;
     transform:scale(0.1);
 }
 
@@ -570,3 +570,105 @@ box-sizing:border-box;
     background: #F87C56;
     border-radius: 50%;
   }
+
+  /* Page Parcours */
+  .parcours .oeuvreQuestion{
+      background:rgba(255,255,255,0.7);
+      padding:0.5em;
+      margin-top:5px;
+  }
+
+.parcours p{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: none;
+	text-align: center;
+}
+
+.parcours button{
+    text-align: center;
+    margin:2px;
+    cursor:pointer;
+
+}
+
+.parcours img{
+    display:block;
+	height: auto;
+	width: 100%;
+}
+.parcours .oui{
+	display: inline-block;
+    margin-top: 30px;
+}
+
+.parcours .trouve{
+margin-top: 10px;
+}
+
+.parcours .question{
+	margin-top: 30px;
+	font-style:italic;
+}
+
+.parcours button{
+    display:inline-block;
+    padding:0.5em;
+    width:48%;
+    box-sizing:border-box;
+}
+
+
+/* Page Resultat Recherche */
+
+.resultatRecherche{
+    vertical-align: center;
+}
+
+.resultatRecherche h1{
+	text-align: center;
+	margin-top:10px;
+	margin-bottom: 10px;
+    border-width: 1px;
+    font-weight:bold;
+}
+
+.resultatRecherche > div{
+    width:100%;
+    vertical-align: top;
+    background: rgba(255,255,255,0.7);
+    margin-bottom:5px;
+    padding:0.5em;
+    box-sizing:border-box;
+    cursor:pointer;
+    transition:1s;
+}
+.resultatRecherche > div:hover{
+    box-shadow: 0px 0px 1px 1px #000;
+    transition:1s;
+}
+
+.resultatRecherche img{
+	display:inline-block;
+	height: auto !important;
+    width: 90px;
+    
+}
+
+.resultatRecherche div{
+	display:inline-block;
+    vertical-align: center;
+    cursor:pointer;
+}
+
+.resultatRecherche img{
+	display:inline-block;
+	height: 120px;
+	width: 90;
+}
+
+.resultatRecherche .description{
+    display:inline-block;
+    width:150px;
+    cursor:pointer;
+}
