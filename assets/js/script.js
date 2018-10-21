@@ -403,4 +403,9 @@ function retournerTableau(){
         $('.uneOeuvre .descriptionsPrecises').addClass('hidden');
         $('.uneOeuvre .descriptionsGenerales').removeClass('hidden');
     }
-	}
+
+} 
+function clicked(){
+    $('i.checker').removeClass('fa-square');
+    $('i.checker').addClass('fa-check-square');
+}
