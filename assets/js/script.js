@@ -167,7 +167,6 @@ $(document).ready(function(){
     $('#seConnecter').submit(connexion);
     $("#scan").on('click', startScan);
     $('.uneOeuvre .switch').click(function(){retournerTableau();});
-    
 });
 function validate(){
     $(".parcours img").removeClass("hidden");
@@ -265,9 +264,9 @@ function initMap() {
 }
 
 /** @description Connecte l'utilisateur
- * @param {e} évènement au clic  
+ * @param {e} évènement au clic
  * @return {boolean}  true si connecté, false si mauvais identifiants
- */  
+ */
 function connexion(e){
     e.preventDefault();
     class Utilisateur{
@@ -316,19 +315,19 @@ function connexion(e){
 }
 
 /** @description Déconnecte l'utilisateur actuel
- * @param {e} évènement au clic  
- * @return {boolean}  
- */  
+ * @param {e} évènement au clic
+ * @return {boolean}
+ */
 function deconnexion(e){
     e.preventDefault();
     utilisateur = "";
     goToPage('choixUtilisateur');
 }
 
-/** @description Affiche la page entrée en parametre 
- * @param {string} page la classe de la page / ne pas oublier le . 
- * @return {nothing}  
- */  
+/** @description Affiche la page entrée en parametre
+ * @param {string} page la classe de la page / ne pas oublier le .
+ * @return {nothing}
+ */
 function goToPage(page){
     $('.page').each(function(){
         $(this).removeClass('active');
@@ -355,13 +354,13 @@ function startScan() {
                  $("#qr").append('<button onclick="goToPage('+data+')">Voir l\'oeuvre</button>');
 		    },
 		    function(error){
-		        //show read errors 
+		        //show read errors
 		        console.log('Impossible de scanner le code: ' +error)
 		    }, function(videoError){
 		        //the video stream could be opened
 		        console.log('Erreur vidéo');
             });
-	
+
 	$("#stop").on('click', function() {
 		$("#qr").html5_qrcode_stop();
 	});
@@ -379,7 +378,7 @@ function readText(that){
         console.log(test.files);
         if(test.files && test.files[0]){
             var reader = new FileReader();
-            reader.onload = function (e) {  
+            reader.onload = function (e) {
                 var output=e.target.result;
 
                 document.getElementById('container').innerHTML= output;
@@ -400,10 +399,4 @@ function retournerTableau(){
         $('.uneOeuvre .descriptionsPrecises').addClass('hidden');
         $('.uneOeuvre .descriptionsGenerales').removeClass('hidden');
     }
-}
-
-function clicked(){
-    console.log($(' i', this));
-    $('i.checker').removeClass('fa-square');
-    $('i.checker').addClass('fa-check-square');
 }
