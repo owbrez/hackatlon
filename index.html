@@ -59,53 +59,134 @@
     </div>
     </div>
   </section>
-  <section class="page resultatRecherche"></section>
-  
-<section class="page rechercheMnr catalogue">
-    <p>Que recherchez-vous ? </p><br/>
-  <form>
-  <input type="text" placeholder="rechercher..">
-    <select >
-      <option value="Artiste">Artiste</option>
-      <option value="Contenu">Contenu de l'oeuvre</option>
-      <option value="Ville">Ville</option>
-    </select>
-  
-  <button id="valide" value="Valider" onclick="goToPage('.resultatRecherche')">Rechercher</button>
-  </form>
+  <section class="page parcours">
+    <div class="oeuvreQuestion">
+      <p>Oeuvre 1 : Madame Adélaïde en Diane.</p>
+      <img class="hidden" src="image/mnr81.jpg" />
+      <button class="trouve hidden" onclick="goToPage('.uneOeuvre')">J'ai trouvé l'Oeuvre</button>
+      <div class="question">Jean-Marc Nattier a-t-il été le portraitiste officiel de la famille de Louis XV au 18e
+        siècle?</div>
+      <button class="oui" onclick="validate()">Oui</button><button class="non" onclick="unvalidate()">Non</button>
+    </div>
   </section>
-  <section class="page parcours"></section>
-  <section class="page active uneOeuvre">
+  <section class="page active resultatRecherche">
+  
+      <h1>Voici le résultat de la recherche :</h1>
+  
+      <div onclick="goToPage('.uneOeuvre')">
+        
+        <img src="image/mnr81.jpg">
+        <div class="description"><label for="titre">Titre : Madame Adélaïde en Diane.</label>
+        <label for="lieu">Lieu actuel : Musée Bernard d'Agesci</label>
+        <label for="artiste">Artiste : Inconnu </label>
+      </div>
+    </div>
+  
+      <div onclick="goToPage('.uneOeuvre')">
+        
+        <img src="image/aor1.jpg"/>
+        <div class="description">
+        <label for="titre">Titre : bassin islamique du XIVe ou XVe siècle</label>
+        <label for="lieu">Lieu actuel : Musée Bernard d'Agesci</label>
+        <label for="artiste">Artiste : Inconnu </label>
+      </div>
+      </div>
+  
+      <div onclick="goToPage('.uneOeuvre')">
+        
+        <img src="image/aor2.jpg">
+        <div class="description"><label for="titre">Titre : bassin islamique du XIVe ou XVe siècle</label>
+        <label for="lieu">Lieu actuel : Musée Bernard d'Agesci</label>
+        <label for="artiste">Artiste : Inconnu </label>
+        </div>
+      </div>
+  
+      <div onclick="goToPage('.uneOeuvre')">
+        
+        <img src="image/mnr80.jpg">
+        <div class="description">
+        <label  for="titre">Titre : </label>
+        <label for="lieu">Lieu actuel : Musée Bernard d'Agesci</label>
+        <label for="artiste">Artiste : Inconnu </label>
+        </div>
+      </div>
+  
+      <div onclick="goToPage('.uneOeuvre')">
+        
+        <img src="image/mnr554-3.jpg">
+        <div class="description"><label for="titre">Titre : Vendeur d'oignons. </label>
+        <label for="lieu">Lieu actuel : Musée Bernard d'Agesci</label>
+        <label for="artiste">Artiste : Inconnu </label>
+      </div>
+  </div>
+      <div onclick="goToPage('.uneOeuvre')">
+        
+        <img src="image/mnr555.jpg">
+        <div class="description"><label for="titre">Titre : Vendeur de légumes.</label>
+        <label for="lieu">Lieu actuel : Musée Bernard d'Agesci</label>
+        <label for="artiste">Artiste : Inconnu </label>
+      </div>
+  </div>
+  <div onclick="goToPage('.uneOeuvre')">
+        
+        <img src="image/mnr844.jpg">
+        <div class="description"><label for="titre">Titre : Portrait d'homme</label>
+        <label for="lieu">Lieu actuel : Musée Bernard d'Agesci</label>
+        <label for="artiste">Artiste : Inconnu </label>
+      </div>
+  </div>
+  </section>
+  <section class="page rechercheMnr catalogue">
+    <p>Que recherchez-vous ? </p><br />
+    <form>
+      <input type="text" placeholder="rechercher..">
+      <select>
+        <option value="Artiste">Artiste</option>
+        <option value="Contenu">Contenu de l'oeuvre</option>
+        <option value="Ville">Ville</option>
+      </select>
+
+      <button id="valide" value="Valider" onclick="goToPage('.resultatRecherche')">Rechercher</button>
+    </form>
+  </section>
+  <section class="page uneOeuvre">
     <div class="informations">
       <H1>Madame Adélaïde en Diane</H1>
       <i class="fas fa-undo switch"></i>
       <img src="image/mnr81.jpg" alt="" class="front">
       <img src="image/dos-tableau.jpg" class="dos hidden">
-      <button><i class="far fa-square"></i><span> J'ai trouvé l'oeuvre</span></button>
+      <button onclick="clicked()"><i class="far fa-square checker"></i><span> J'ai trouvé l'oeuvre</span></button>
       <button><i class="fas fa-share-alt-square"></i><span>Je partage</span></i></button>
       <div class="descriptionsGenerales">
         <p><strong>Type : </strong>Peinture à l'huile sur toile</p>
         <p><strong>Date : </strong> 18ème siècle</p>
         <p><strong>Identifiant : </strong> MNR 81</p>
-        <p><strong>Représentation : </strong> <span>Portrait</span><span>Madame Adélaïde</span><span>assise</span><span>Tunique</span><span>carquois</span><span>Fond de paysage</span><span>feuillu</span><span>rocher</span></p>
+        <p><strong>Représentation : </strong> <span>Portrait</span><span>Madame Adélaïde</span><span>assise</span><span>Tunique</span><span>carquois</span><span>Fond
+            de paysage</span><span>feuillu</span><span>rocher</span></p>
       </div>
       <div class="descriptionsPrecises hidden">
         <button class="contacter">Contacter le conservateur</button>
         <p><strong>Dimensions</strong> H:0.98m | L: 1.25m</p>
-        <p><strong>Expositions</strong> 1999, Versailles, château, "Jean-Marc Nattier 1685-1766", n°43, repr. Salon de 1745, n°96</p>
-        <p><strong>Historique</strong> Le tableau est sans doute le tableau peint en 1745 pour la chambre du roi au château de Choisy (selon cat. exp. 1999) ; il figure au Salon de 1745.
-          Un tableau attribué à Nattier (même sujet, mêmes dimensions) est adjugé 63 000 F le 23 juin 1941 (Me Ader) [1] ; il est vendu 25 000 RM par M. Schmit le 20 janvier 1942 au Kaiser-Wilhelm Museum de Krefeld (inv. 265) [2].
+        <p><strong>Expositions</strong> 1999, Versailles, château, "Jean-Marc Nattier 1685-1766", n°43, repr. Salon de
+          1745, n°96</p>
+        <p><strong>Historique</strong> Le tableau est sans doute le tableau peint en 1745 pour la chambre du roi au
+          château de Choisy (selon cat. exp. 1999) ; il figure au Salon de 1745.
+          Un tableau attribué à Nattier (même sujet, mêmes dimensions) est adjugé 63 000 F le 23 juin 1941 (Me Ader)
+          [1] ; il est vendu 25 000 RM par M. Schmit le 20 janvier 1942 au Kaiser-Wilhelm Museum de Krefeld (inv. 265)
+          [2].
           Il est enregistré au Central Collecting Point de Marbourg sous le n° 471.
-          Le tableau est attribué au musée du Louvre par l'Office des Biens et Intérêts Privés en 1950 et déposé au musée des Beaux-Arts de Niort par arrêté du ministère de l'Education nationale du 29 mai 1952 (14-5-1952) (3).</p>  
+          Le tableau est attribué au musée du Louvre par l'Office des Biens et Intérêts Privés en 1950 et déposé au
+          musée des Beaux-Arts de Niort par arrêté du ministère de l'Education nationale du 29 mai 1952 (14-5-1952)
+          (3).</p>
       </div>
     </div>
     <div class="frise">
-        <ul class="friseProgression">
-            <li class="fait"><span class="etiquette">Peint 1745</span></li>
-            <li class="actif"><span class="etiquette">Salon de 1745</span></li>
-            <li class="actif"><span class="etiquette">Le Louvre 1950</span></li>
-            <li class="actif"><span class="etiquette">Musée de Niort 1952</span></li>
-          </ul>
+      <ul class="friseProgression">
+        <li class="fait"><span class="etiquette">Peint 1745</span></li>
+        <li class="actif"><span class="etiquette">Salon de 1745</span></li>
+        <li class="actif"><span class="etiquette">Le Louvre 1950</span></li>
+        <li class="actif"><span class="etiquette">Musée de Niort 1952</span></li>
+      </ul>
     </div>
   </section>
   <footer>

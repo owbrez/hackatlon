@@ -167,7 +167,12 @@ $(document).ready(function(){
     $('#seConnecter').submit(connexion);
     $("#scan").on('click', startScan);
     $('.uneOeuvre .switch').click(function(){retournerTableau();});
+    
 });
+function validate(){
+    $(".parcours img").removeClass("hidden");
+    $(".parcours .trouve").removeClass("hidden");
+  }
 function initMap() {
     var museeAgesci = {lat: 46.323, lng: -0.464};
   map = new google.maps.Map(document.getElementById('map'), {
@@ -395,4 +400,10 @@ function retournerTableau(){
         $('.uneOeuvre .descriptionsPrecises').addClass('hidden');
         $('.uneOeuvre .descriptionsGenerales').removeClass('hidden');
     }
+}
+
+function clicked(){
+    console.log($(' i', this));
+    $('i.checker').removeClass('fa-square');
+    $('i.checker').addClass('fa-check-square');
 }
