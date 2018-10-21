@@ -400,3 +400,8 @@ function retournerTableau(){
         $('.uneOeuvre .descriptionsGenerales').removeClass('hidden');
     }
 } 
+
+function clicked(){
+    $('i.checker').removeClass('fa-square');
+    $('i.checker').addClass('fa-check-square');
+}
