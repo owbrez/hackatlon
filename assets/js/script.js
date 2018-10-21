@@ -166,7 +166,11 @@ var uneOeuvre = {"NUMINVENTAIRE": ["MNR 81"],
 $(document).ready(function(){
     $('#seConnecter').submit(connexion);
     $("#scan").on('click', startScan);
+
     $('.uneOeuvre .switch').click(function(){retournerTableau();});
+
+    $('.uneOeuvre .switch').click(function(){retournerTableau();});
+
 });
 function validate(){
     $(".parcours img").removeClass("hidden");
@@ -399,4 +403,4 @@ function retournerTableau(){
         $('.uneOeuvre .descriptionsPrecises').addClass('hidden');
         $('.uneOeuvre .descriptionsGenerales').removeClass('hidden');
     }
-} 
+	}
