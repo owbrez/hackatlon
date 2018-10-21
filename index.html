@@ -17,22 +17,35 @@
     <h1>Mission Vaillant</H1>
   </header>
 
-  <section class="page  connexion">
+  <section class="page connexion">
     <form action="" id="seConnecter">
       <i class="fas fa-user"></i>
       <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo">
       <input type="password" placeholder="Mot de Passe" name="password" id="password">
       <input type="submit" value="Se Connecter">
+      <p class="inscriptionLink" onclick="goToPage('.inscriptionUtilisateur')">S'inscrire</p>
     </form>
   </section>
-  <section class="page active choixUtilisateur">
-      <img src="image/rose.png" alt="">
+  <section class="page inscriptionUtilisateur">
+    <p>Inscription</p>
+    <form>
+      <input id="Prenom" type="text" placeholder="Prenom" /><br />
+      <input id="Pseudo" type="text" placeholder="Pseudo" /><br />
+      <input id="mdp" type="text" placeholder="Mot de passe" /><br />
+      <input id="confirmation" type="text" placeholder="Confirmer le mot de passe" /><br />
+      <input id="ville" type="text" placeholder="Ville" /><br />
+      <input id="valide" type="submit" value="Valider"><br />
+    </form>
+  </section>
+
+  <section class="page choixUtilisateur">
+    <img src="image/rose.png" alt="">
     <button type="button" onclick="goToPage('.connexion')">Je me connecte</button>
     <button type="button" onclick="goToPage('.googleMap')">Je suis visiteur</button>
   </section>
   <section class="page googleMap">
-      <div id="map"></div>
-    <button onclick="goToPage('.parcours')">Musée Bernard d'Agesci : <span class="mnr">7 MNRs</span></button>
+    <div id="map"></div>
+    <button onclick="goToPage('.parcours')">Musée Bernard d'Agesci : <span class="mnr">7 mnr</span></button>
   </section>
   <section class="page mnr"></section>
   <section class="page qrCode">
@@ -46,25 +59,39 @@
     </div>
     </div>
   </section>
-  <section class="page catalogue"></section>
-  <section class="page compte">
-    <div class="profil">
-      <p><i class="fa"></i> Pseudo</p>
-      <p><i class="fa"></i> nom</p>
-      <p><i class="fa"></i> prenom</p>
-      <p><i class="fa"></i> mot de passe</p>
-      <p><i class="fa"></i> ville</p> 
-    </div>
+  <section class="page resultatRecherche"></section>
+  
+<section class="page rechercheMnr catalogue">
+    <p>Que recherchez-vous ? </p><br/>
+  <form>
+  <input type="text" placeholder="rechercher..">
+    <select >
+      <option value="Artiste">Artiste</option>
+      <option value="Contenu">Contenu de l'oeuvre</option>
+      <option value="Ville">Ville</option>
+    </select>
+  
+  <button id="valide" value="Valider" onclick="goToPage('.resultatRecherche')">Rechercher</button>
+  </form>
   </section>
   <section class="page parcours"></section>
-  <section class="uneOeuvre"></section>
+  <section class="page active uneOeuvre">
+    <div class="informations">
+      <H1></H1>
+      <img src="" alt="">
+      <button><i class="far fa-square"></i><span> J'ai trouvé l'oeuvre</span></button>
+      <div class="descriptionGenerales"></div>
+    </div>
+    <div class="frise">
+
+    </div>
+  </section>
   <footer>
     <nav id="buttons_flex">
       <li onclick="goToPage('.googleMap')"><i class="fas fa-map-marker-alt"></i></li>
       <li onclick="goToPage('.mnr')">MNR</li>
       <li onclick="goToPage('.qrCode')"><i class="fas fa-qrcode"></i></li>
       <li onclick="goToPage('.catalogue')"><i class="fas fa-search"></i></li>
-      <li onclick="goToPage('.compte')"><i class="fas fa-user"></i></li>
       </ul>
     </nav>
   </footer>
@@ -72,7 +99,7 @@
   <script src="assets/js/librairies/jsqrcode-combined.js"></script>
   <script src="assets/js/librairies/html5-qrcode.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmZ2X1WQVWj-OgEntt_CO-WoDxl-go4ps&callback=initMap"
-  async defer></script>
+    async defer></script>
 </body>
 
 </html>
