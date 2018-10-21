@@ -45,6 +45,7 @@ table {
 /* Visibilité */
 .hidden{
     opacity:0;
+    display:none;
     transform:scale(0.1);
 }
 
@@ -113,6 +114,7 @@ section.page{
   transition: 0.5s cubic-bezier(.73,.47,.58,.92);
   padding:0px 5px;
   box-sizing:border-box;
+  overflow-y:scroll;
 }
 section.page.active{
   left:0;
@@ -378,3 +380,193 @@ font-weight:bold;
 
 }
 /* Page une Oeuvre */
+
+.uneOeuvre{
+    position:relative;
+}
+
+.uneOeuvre h1{
+    text-align:center;
+    margin-top:10px;
+}
+
+.uneOeuvre img{
+    width:100%;
+    margin:10px 0;
+}
+
+.uneOeuvre i.switch{
+    position:absolute;
+    right:5px;
+    color:#000;
+    font-size:20px;
+    cursor:pointer;
+    background-color:rgba(255,255,255,0.4);
+    padding:2px;
+    box-sizing:border-box;
+}
+
+.uneOeuvre .informations {
+    text-align:center;
+}
+
+.uneOeuvre .informations button{
+    width:49%;
+    display:inline-block;
+    padding:0.5em 0.2em;
+    box-sizing:border-box;
+}
+.uneOeuvre .informations button i{
+    margin-right:5px;
+}
+
+.uneOeuvre .informations .descriptionsGenerales{
+text-align:left;
+background-color:rgba(255,255,255,0.6);
+margin:0.5em 0;
+padding:5px;
+box-sizing:border-box;
+}
+.uneOeuvre .informations .descriptionsGenerales p{
+    margin-bottom:10px;
+    background-color:rgba(255,255,255,0.7);
+    padding:0.4em;
+    box-sizing:border-box;
+}
+
+.uneOeuvre .informations .descriptionsGenerales strong{
+    font-weight:bold;
+}
+
+.uneOeuvre .informations .descriptionsGenerales span{
+    margin-right:5px;
+    margin-bottom:5px;
+    color:#fff;
+    padding:5px !important;
+    box-sizing: border-box;
+    background-color:#F87C56;
+    display:inline-block;
+}
+.uneOeuvre .informations .descriptionsPrecises{
+text-align:left;
+background-color:rgba(255,255,255,0.6);
+margin:0.5em 0;
+padding:5px;
+box-sizing:border-box;
+}
+.uneOeuvre .informations .descriptionsPrecises button{
+    width:100%;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.uneOeuvre .informations .descriptionsPrecises p{
+    margin-bottom:10px;
+    background-color:rgba(255,255,255,0.7);
+    padding:0.4em;
+    box-sizing:border-box;
+}
+
+.uneOeuvre .informations .descriptionsPrecises strong{
+    font-weight:bold;
+}
+
+.uneOeuvre .informations .descriptionsPrecises span{
+    margin-right:5px;
+    margin-bottom:5px;
+    color:#fff;
+    padding:5px !important;
+    box-sizing: border-box;
+    background-color:#F87C56;
+    display:inline-block;
+
+}
+
+.frise{
+    background-color:rgba(255,255,255,0.8);
+    padding:1em;
+    box-sizing:border-box;
+    overflow-x:scroll;
+}
+
+.friseProgression {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: no wrap;
+  }
+  
+  .friseProgression li {
+    position: relative;
+    flex: 1 0 auto;
+    height: 58px;
+    text-align: center;
+  }
+  
+  .friseProgression li:before {
+    content: "";
+    height: 2px;
+    background: #CCC;
+    width: 100%;
+    position: absolute;
+    top: 43px;
+    left: 0;
+  }
+  
+  .friseProgression li.fait:before,
+  .friseProgression li.actif:before {
+    background: #F87C56;
+  }
+  
+  .friseProgression li:first-child:before {
+    width: 50%;
+    left: 50%;
+  }
+  
+  .friseProgression li:last-child:before {
+    width: 50%;
+    left: 0;
+  }
+  
+  .friseProgression li .etiquette {
+    position: relative;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px 0 #e6e6e6;
+    height: 22px;
+    padding: 2px 10px;
+  }
+  
+  .friseProgression li .etiquette:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -13px;
+    top: 100%;
+    margin-top: 10px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #CCC;
+    border-radius: 50%;
+    background: #fff;
+  }
+  
+  .friseProgression li.fait .etiquette:before {
+    background: #F87C56;
+    border-color: #F87C56;
+  }
+  
+  .friseProgression li.actif .etiquette:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+    top: 100%;
+    margin-top: 17px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: #F87C56;
+    border-radius: 50%;
+  }

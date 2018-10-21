@@ -166,7 +166,7 @@ var uneOeuvre = {"NUMINVENTAIRE": ["MNR 81"],
 $(document).ready(function(){
     $('#seConnecter').submit(connexion);
     $("#scan").on('click', startScan);
-    createOeuvre(uneOeuvre);
+    $('.uneOeuvre .switch').click(function(){retournerTableau();});
 });
 function initMap() {
     var museeAgesci = {lat: 46.323, lng: -0.464};
@@ -382,3 +382,17 @@ function readText(that){
             reader.readAsText(test.files[0]);
         }
     }
+
+function retournerTableau(){
+    if($('.uneOeuvre img.dos').hasClass('hidden')){
+        $('.uneOeuvre img.front').addClass('hidden');
+        $('.uneOeuvre img.dos').removeClass('hidden');
+        $('.uneOeuvre .descriptionsPrecises').removeClass('hidden');
+        $('.uneOeuvre .descriptionsGenerales').addClass('hidden');
+    }else{
+        $('.uneOeuvre img.front').removeClass('hidden');
+        $('.uneOeuvre img.dos').addClass('hidden');
+        $('.uneOeuvre .descriptionsPrecises').addClass('hidden');
+        $('.uneOeuvre .descriptionsGenerales').removeClass('hidden');
+    }
+}
